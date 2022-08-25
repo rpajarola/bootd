@@ -1,0 +1,27 @@
+#
+# $Id:#
+#
+
+Preboot Execution Environment
+
+Status
+
+FreeBSD/i386 5.0        not tested
+
+Notes
+
+PXE on the server side is basically dhcp with additional vendor
+options (and optionally, on a differnt port) and tftp.
+
+References
+
+pxespec.pdf		PXE 2.1 specification
+
+Links
+
+http://www.intel.com/labs/manage/wfm/index.htm		Official PXE Specification
+http://www.kano.org.uk/projects/pxe/			PXE Daemon (Linux/OpenBSD)
+http://syslinux.zytor.com/pxe.php			PXELinux
+http://www.stanford.edu/~alfw/PXE-Kickstart/		PXE Kickstart
+http://www.ltsp.org/documentation/pxe.howto.html	PXE Howto
+http://www.bpbatch.org/docs/linux.html			PXE Howto

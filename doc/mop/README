@@ -1,0 +1,17 @@
+#
+# $Id:#
+#
+
+Maintenance Operations Protocol
+
+Status
+
+FreeBSD/i386 5.0        not implemented
+
+Notes
+
+a minimal subset of the DECnet Phase IV specification to allow netbooting.
+
+References
+
+DECnetIV/			DECnet Phase IV specification

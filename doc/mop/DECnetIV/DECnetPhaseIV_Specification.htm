@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0049)http://gatekeeper.dec.com/pub/DEC/DECnet/PhaseIV/ -->
+<HTML><HEAD><TITLE>The DECnet Phase IV Specifications</TITLE>
+<META content="text/html; charset=windows-1252" http-equiv=Content-Type>
+<META content="MSHTML 5.00.3211.1700" name=GENERATOR></HEAD>
+<BODY><IMG alt="Digital Equipment Corporation" 
+src="digital-logo.gif"> 
+<H1>The DECnet Phase IV Specifications</H1>The <EM>Digital Network 
+Architecture</EM> (<EM>DNA</EM>) is a set of specifications that defines DECnet. 
+This page describes a subset of those specifications which define DECnet Phase 
+IV. In addition to the specifications and their descriptions, a small amount of 
+background information about DECnet Phase IV in provided to help choose which 
+specification, if any, might be of interest.
+<P>Please be aware that all of the DECnet Phase IV specifications are simple 
+text files. They were written in the dark ages of computer history before the 
+widespread introduction of WYSIWYG editors. 
+<HR>
+
+<H2>Introduction</H2>DECnet Phase IV was first released by Digital in 1983 for 
+its VMS and RSX-11 systems. Since then it has been implemented on just about 
+every operating system Digital ever shipped including ULTRIX, VAXeln, RSTS/E, 
+TOPS-20, and TOPS-10; the significant exception was RT-11. 
+<P>Two of major advancements of DECnet Phase IV over DECnet Phase III were 
+support for larger networks (63 areas of 1023) nodes and the use of Ethernet as 
+a datalink. DECnet Phase III limited the entire network to a maximum of 255 
+nodes. DECnet Phase III also only supported point-to-point and multi-drop links 
+which meant it could not cope the coming introduction of LANs to the 
+marketplace. 
+<P>
+<HR>
+
+<H2>Datalinks</H2>DECnet Phase IV still used DDCMP as the basis for its 
+point-to-point links though DDCMP was enhanced to make better use of 
+high-bandwidth and high-latency links such as satellite links. 
+<P>
+<UL>
+  <LI><A 
+  href="http://gatekeeper.dec.com/pub/DEC/DECnet/PhaseIV/ddcmp.txt"><B>DDCMP 
+  V4.1</B></A> describes a data link control procedure that ensures a reliable 
+  data communication path between communication devices connected by data links. 
+  <B>DDCMP</B> has been designed to operate over full and half-duplex 
+  synchronous and asynchronous channels in both point-to-point and multipoint 
+  modes. </LI></UL>However Ethernet was the new datalink of choice for DECnet 
+Phase IV systems. And we had the specification to make sure it worked. 
+<UL>
+  <LI><A 
+  href="http://gatekeeper.dec.com/pub/DEC/DECnet/PhaseIV/edatlin10.txt"><B>DNA 
+  Ethernet V1.0</B></A> describes the structure, functions, interfaces, and 
+  protocols of the DNA Ethernet Data Link not defined in the Ethernet 
+  Specification that make it compatible with DNA. 
+  <LI><A 
+  href="http://gatekeeper.dec.com/pub/DEC/DECnet/PhaseIV/eprodar10.txt"><B>Ethernet 
+  Node Product V1.0</B></A> specifies the minimum required functions for a DEC 
+  node connected to an Ethernet. A node meeting these requirements will be 
+  maintainable and usable to build additional product specific functions. 
+</LI></UL>
+<HR>
+
+<H2>Routing, NSP, and Session Control</H2>DECnet Phase IV forced a radical 
+change in the Routing component of DECnet. Larger networks forced introduction 
+of hierarchical routing while LANs introduced the use of multicast messages. 
+<P>
+<UL>
+  <LI><A 
+  href="http://gatekeeper.dec.com/pub/DEC/DECnet/PhaseIV/route20.txt"><B>Routing 
+  V2.0</B></A> specifies the functions, interfaces, and protocols for 
+  controlling the routing of messages within DECnet communications networks. 
+  </LI></UL>While Routing underwent large scale changes, the Network Service 
+Protocol (NSP) and Session Control only received a minor facelift from their 
+DECnet Phase III definitions and most of those changes were due to the larger 
+addresses in Routing. 
+<P>Even though Session Control is defined separately from NSP, DECnet Phase IV 
+implementations rarely code Session Control as a distinct component but instead 
+merge it into their implementation of NSP. 
+<UL>
+  <LI><A 
+  href="http://gatekeeper.dec.com/pub/DEC/DECnet/PhaseIV/nsp401.txt"><B>Network 
+  Service Protocol V4.0</B></A> specifies the functions, interfaces, and 
+  protocols for handling the creation and destruction of logical links, error 
+  control, and flow control. 
+  <LI><A 
+  href="http://gatekeeper.dec.com/pub/DEC/DECnet/PhaseIV/session10.txt"><B>Session 
+  Control V1.0</B></A> describes the functions, interfaces, operation, and 
+  protocols relating to creating, maintaining, and destroying logical links. A 
+  logical link is a virtual connection between two user-level software modules 
+  (end users) in the same node or in different nodes of the same network. 
+</LI></UL>
+<HR>
+
+<H2>Network Management</H2>One of the important aspects of DECnet has the been 
+the existence of network management tools which act the same independent of the 
+DECnet platform. Having a well defined and complete network management 
+specification has allowed DECnet Phase IV to carry on in this regard. 
+<P>Network management is not just the ability to manage your own DECnet node but 
+also encompasses remote network management, event logging, and loopback at the 
+datalink and application levels. These capabilities, while more common now, were 
+rare in networking protocols when DECnet Phase IV came out (though DECnet Phase 
+III also contained some of these capabilities). 
+<P>
+<UL>
+  <LI><A 
+  href="http://gatekeeper.dec.com/pub/DEC/DECnet/PhaseIV/netman40.txt"><B>Network 
+  Management V4.0</B></A> describes the functions, structures, protocols, 
+  algorithms, and operation of the DIGITAL Network Architecture Network 
+  Management modules. It is a model for DECnet implementations of Network 
+  Management software. Network Management provides control and observation of 
+  DECnet network functions to users and programs. </LI></UL>Maintenance Operations 
+(MOP) is far more important to DECnet than the abstract below indicates. MOP is 
+used to downline load software to routers and servers, even servers that don't 
+run DECnet. MOP also allows network managers to connect routers and servers 
+using a feature of MOP called Console Carrier Requester (CCR). 
+<UL>
+  <LI><A 
+  href="http://gatekeeper.dec.com/pub/DEC/DECnet/PhaseIV/maintop30.txt"><B>Maintenance 
+  Operations V3.0</B></A> describes the structure, functions, interfaces, and 
+  protocols needed for the low level maintenance of a DECnet network. </LI></UL>
+<HR>
+
+<H2>Application Protocols</H2>There have been three basic applications common to 
+data networks: remote file access, remote terminal access, and electronic mail. 
+While remote file and terminal access are defined by the Digital Network 
+Architecture, electronic mail is not. 
+<P>Not coincidentally DECnet has remained remarkably consistent in its file 
+transfer and remote terminal access protocol but electronic mail has gone in two 
+directions, VMSmail (also called Mail-11) and Message Router / MAILBUS. 
+<EM>Which is why no electronic mail protocols are described here.</EM> 
+<P>The seamless integration of remote file access under VMS (and in the past, 
+RSX-11) has long been one the major successes of DECnet. This is due in no small 
+part to the file access protocol used by DECnet which allows a very rich set of 
+file access functions: 
+<UL>
+  <LI><A 
+  href="http://gatekeeper.dec.com/pub/DEC/DECnet/PhaseIV/dap_v5_6_0.txt"><B>Data 
+  Access Protocol (DAP) V5.6</B></A> provides standardized formats and 
+  procedures for accessing and passing data between a user process and a file 
+  system existing in a network environment. </LI></UL>DECnet Phase IV introduced a 
+new remote terminal protocol, <B>CTERM</B>, for use on Phase IV systems. However 
+<B>CTERM</B> never really lived up to its expectations but it did manage to get 
+implemented on most of the major DECnet Phase IV platforms. 
+<P><B>CTERM</B> is defined by two specifications: 
+<UL>
+  <LI><A 
+  href="http://gatekeeper.dec.com/pub/DEC/DECnet/PhaseIV/cterm.txt"><B>Command 
+  Terminal V1.4</B></A> describes a model for communication between 
+  terminal-handling subsystems and operating systems in a communications 
+  network. 
+  <LI><A 
+  href="http://gatekeeper.dec.com/pub/DEC/DECnet/PhaseIV/found.txt"><B>Terminal 
+  Foundation V2.5</B></A> describes a model for primitive terminal-handling 
+  services in Digital systems. These services are independent of the specific 
+  use (e.g. command handling, forms, editing) being made of the terminal and 
+  include: connection management, mode changing, and local characteristics 
+  management. </LI></UL>
+<HR>
+
+<H2>LAT</H2>At the same time that DECnet Phase IV was released, Digital 
+introduced a new LAN based protocol for terminal access called <EM>LAT</EM> 
+(<EM>Local Area Terminal</EM>). This protocol was revolutionary and Digital was 
+awarded a patent for it. LAT remains to this day a proprietary protocol for 
+which specifications are not available without license. 
+<P>
+<HR>
+
+<H2>In Hindsight</H2>Looking back, most of the architects and implementors of 
+DECnet Phase IV would probably agree to a few changes to the architecture for 
+DECnet Phase IV. 
+<P>The first change to the architecture would be to <B>not</B> have a DECnet 
+Phase IV system change the Ethernet physical address of the machine. A DECnet 
+Phase IV system currently changes its Ethernet physical address to the form of 
+AA-00-04-00-xx-yy where xx-yy is derived from the Phase IV address of the 
+machine. This allowed for simple router-less LAN operation since the LAN address 
+of the remote could be deduced from its Phase IV address. However this caused 
+many problems on systems running multiple protocols, especially ones that do not 
+support the dynamic switching of the Ethernet physical address of the system. 
+<P>This became quite apparent when the mechanisms of running DECnet Phase IV 
+over Token Ring (IEEE 802.5) network were being developed. Many Token Ring 
+system also want to their Token Ring physical address to something decided by 
+their network administrator. This is in obvious conflict with how DECnet wants 
+to operate. This resulted in a change to DECnet Phase IV such that on Token Ring 
+the existing physical address remains unchanged even when DECnet is running. 
+<P>The second change would be to have given DECnet Phase IV a larger address 
+space. While in the early 1980s a 16 bit address space seemed like a huge 
+number, today that number seems quite small. Even the TCP/IP protocol family 
+with a 32-bit address is now beginning to strain the limits of its address space 
+after only a decade. 
+<P>Indeed, a DECnet Phase IV network would fit easily within an IP Class B 
+network. It is interesting to speculate what effect a larger address space would 
+have had on DECnet Phase IV. 
+<P>
+<HR>
+
+<H2>The Last Word</H2><B>All the protocols mentioned above (except for 
+<EM>LAT</EM>), even though developed by Digital, are not proprietary to Digital. 
+Anyone can implement them without seeking permission from or paying royalties to 
+Digital.</B> 
+<P>Eventually a number of enhancements were made to DECnet Phase IV. These 
+enchancements become known as DECnet Phase IV+. DECnet Phase IV+ systems were 
+completely interoperable with DECnet Phase IV. In fact most DECnet Phase IV 
+systems are actually DECnet Phase IV+ systems. Most of the enhancements were 
+performance improvements such as the addition of path splitting in Routing and 
+the addition of delayed ACKs and a out of order cache in NSP. There was, 
+however, one significant new functional enhancement: the addition of proxies in 
+Session Control. <EM>Note that none of the DECnet Phase IV+ changes are covered 
+in any of the above specifications.</EM>
+<P>Comments or suggestions for this page are welcome and may be sent to 
+<ADDRESS>dnaspecs@lkg.dec.com</ADDRESS>
+<P>
+<HR>
+<EM>Last Updated on November 1st, 1994</EM><BR>
+<ADDRESS>Matt Thomas, thomas@lkg.dec.com</ADDRESS>
+<ADDRESS>Network Operating Systems / Network Engineering</ADDRESS>
+<H6>Copyright <A 
+href="http://www.digital.com/info/digital-at-a-glance.html">Digital Equipment 
+Corporation</A> 1994. Digital, the Digital logo, DECnet, Alpha AXP, and AXP are 
+trademarks of Digital Equipment Corporation. All other trademarks are the 
+property of their respective owners. </H6></BODY></HTML>

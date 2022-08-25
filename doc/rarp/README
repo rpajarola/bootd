@@ -1,0 +1,24 @@
+#
+# $Id:#
+#
+
+Reverse Address Resolution Protocol
+
+Status
+
+FreeBSD/i386 5.0	working
+	tested with SUN SPARCstation 4
+
+Notes
+
+The code in rarp_updatetable has been derived from the FreeBSD rarpd
+source (/usr/src/usr.sbin/rarpd/rarpd.c). This part of the code is
+still untested (read: not working on my machine), though it seems
+this is not strictly necessary.
+
+
+References
+
+RFC903			RARP specification
+RFC826			ARP specification
+rarpd-freebsd.tar.gz	Reference Implementation from FreeBSD

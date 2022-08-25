@@ -1,0 +1,20 @@
+#
+# $Id: README,v 1.2 2002/06/14 16:45:30 pajarola Exp $
+#
+
+SUN rpc.bootparam protocol
+
+Status
+
+FreeBSD/i386 5.0	working
+	tested with SUN SPARCstation4 / Solaris 2.5.1, OpenBSD-2.8
+
+Notes
+
+The reference implementation from FreeBSD has been written by Klas
+Heggemann <klas@nada.kth.se>
+
+References
+
+bootparam_prot.x		sun-rpc interface specification
+bootparamd-freebsd.tar.gz	Reference Implementation from FreeBSD

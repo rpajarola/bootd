@@ -1,0 +1,23 @@
+#
+# $Id:#
+#
+
+HP proprietary Remote Maintenance Protocol
+
+Status
+
+FreeBSD/i386 5.0        working
+	tested with HP425t
+
+Notes
+
+The protocol has been reverse-engineered with tcpdump and compared
+to the existing rbootd implementation in FreeBSD (which AFAIK has
+also been reverse-engineered somehow). Because it has not been
+implemented after an official specification, it is probably incomplete
+and may not work for certain machines.
+
+References
+
+rmp-trace.txt		Annotated Packet Trace
+rbootd-freebsd.tar.gz	Reference Implementation from FreeBSD

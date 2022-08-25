@@ -1,0 +1,23 @@
+#
+# $Id:#
+#
+
+Dynamic Host Configuration Protocol
+
+Status
+
+FreeBSD/i386 5.0        not tested
+
+Notes
+
+References
+
+RFC2131			DHCP?
+RFC2132			DHCP Options and BOOTP Vendor Extensions
+RFC2563			DHCP Option to Disable Stateless Auto-Configuration in IPv4 Clients
+RFC2937			The Name Service Search Option for DHCP
+RFC3004			The User Class Option for DHCP
+RFC3011			The IPv4 Subnet Selection Option for DHCP
+RFC3046			DHCP Relay Agent Information Option
+RFC3118			Authentication for DHCP Messages
+RFC3203			DHCP reconfigure extension

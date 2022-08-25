@@ -1,0 +1,21 @@
+#
+# $Id:#
+#
+
+BOOTstrap Protocol
+
+Status
+
+FreeBSD/i386 5.0        not tested
+
+Notes
+
+References
+
+RFC951			Bootstrap Protocol specification
+RFC1048!!!
+RFC1497!!!
+RFC1533!!!
+RFC1534			Interoperation between DHCP and BOOTP
+RFC1542			Clarifications and Extensions for BOOTP
+tftpd-freebsd.tar.gz    Reference Implementation from FreeBSD

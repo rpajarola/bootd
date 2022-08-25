@@ -1,0 +1,26 @@
+#
+# $Id:#
+#
+
+Trivial File Transfer Protocol
+
+Status
+
+FreeBSD/i386 5.0	working
+	tested with SUN SPARCstation 4 (NetBSD, OpenBSD & Linux bootloader),
+	FreeBSD tftp client
+
+Notes
+
+No extended Options (RFC1785, RFC2347, RFC2348, RFC2349) have been
+implemented yet
+
+References
+
+RFC1350			TFTP rev 2 specification
+RFC1785			Option Negotiation
+RFC2347			Option Extension
+RFC2348			Blocksize Option
+RFC2349			Timeout Interval and Transfer Size Options
+RFC906			Bootstrap Loading using TFTP
+tftpd-freebsd.tar.gz	Reference Implementation from FreeBSD

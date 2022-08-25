@@ -1,0 +1,69 @@
+1 What does it do?
+
+The bootd project allows netbooting a wide variety of clients using
+different protocols with one configuration and one server daemon,
+with easy configurability and diagnostics.
+
+1.1 Why is this useful?
+
+Netbooting has always been a bit of an adventure even for experienced
+users. It required a lot of in-depth knowledge and also a bit of
+luck and persistence. Bootd makes this simple by providing a single
+"bootserver" daemon, with a single simple configuration file.
+
+1.2 What's wrong with the standard implementations?
+
+The "standard" implementations come from a variety of sources. Each
+has their own configuration format, quirks, and limitations, but
+to successfully boot a netboot client, often 3 or more server daemons
+need to be set up correctly.
+
+Some of those configuration formats are rather old-school and
+unforgiving, and misconfigurations often fail silently. Generally,
+the standard implementations don't log much
+
+The configurations are redunant and need to be kept in sync.
+
+1.3 Why is bootd better?
+
+Bootd puts all configuration in one place, in an easy to write and
+easy to read format, which is not so easy to get wrong by accident.
+It also has very extensive and flexible logging to make it easy to
+find out where something goes wrong. It's modular design makes it
+easy to add new protocols.
+
+2 Does it work?
+
+I have been using it to netboot all my machines (see below for a list).
+
+2.1 What does it run on?
+
+Older versions ran on FreeBSD (not tested recently). Current version
+works on Linux and Mac OS X. It should be easy to port to any system
+that has libpcap and libnet.
+
+2.2 What protocols does it support?
+
+* RARP
+* Bootparam
+* TFTP
+* RMP
+* MOP (wip)
+* BOOTP/DHCP (wip)
+* NFS (wip)
+
+2.3 Why is protocol XYZ not supported? 
+
+Because I don't have a machine that needs it.
+
+Send me information (documentation, the output of `tcpdump -s1500 -e -X` or whatever you think might be helpful), and I'll do my best to add that protocol. Or just send me patches ;)
+
+2.4 What clients have been tested?
+
+Machine             OS               Protocols               Status
+HP 425t		    NetBSD  1.5      RMP, RARP, TFTP         OK
+SUN SPARCstation 4  Solaris 2.5.1    RARP, TFTP, Bootparam   OK
+                    NetBSD  1.5      RARP, TFTP, Bootparam   OK
+                    RedHat Linux 6.2 RARP, TFTP              OK
+DECstation 5000/33  NetBSD  1.5      RARP, TFTP              OK
+NCD 19              NCDWare 3.3      TFTP                    OK

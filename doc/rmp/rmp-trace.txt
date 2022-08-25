@@ -1,0 +1,336 @@
+#
+# $Id: rmp-trace.txt,v 1.1.1.1 2002/06/12 14:13:38 pajarola Exp $
+#
+# client: NESTA (HP425t)
+# server: AIAX (FreeBSD/i386 5.0-CURRENT Oct 2001)
+#
+# the only available file is 'SYSNESTA'
+#
+# NESTA asks for server id, available files, and requests 'SYSNESTA'
+
+SEND SERVER ID
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:608 SXSAP:609
+        Boot Request: (Send Server ID)
+                RetCode:0 SeqNo:0 SessID:ffff Vers:2
+                Machine Type: HPS300
+                File Name (0): <>
+NESTA > 9:0:9:0:0:4 sap f8 ui/C
+[000] 00 00 00 06 08 06 09 01  00 00 00 00 00 FF FF 00  ........ ........
+[010] 02 48 50 53 33 30 30 20  20 20 20 20 20 20 20 20  .HPS300
+[020] 20 20 20 20 20 00 00 EE  EE 11 11                      ... ...
+
+
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:609 SXSAP:608
+        Boot Reply:
+                RetCode:0 SeqNo:0 SessID:0 Vers:2
+                File Name (4): <aiax>
+AIAX > NESTA sap f8 ui/C
+[000] 00 00 00 06 09 06 08 81  00 00 00 00 00 00 00 00  ........ ........
+[010] 02 04 61 69 61 78                                 ..aiax
+
+
+SEND FILENAME #1
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:608 SXSAP:609
+        Boot Request: (Send Filename #1)
+                RetCode:0 SeqNo:1 SessID:ffff Vers:2
+                Machine Type: HPS300
+                File Name (0): <>
+NESTA > AIAX sap f8 ui/C
+[000] 00 00 00 06 08 06 09 01  00 00 00 00 01 FF FF 00  ........ ........
+[010] 02 48 50 53 33 30 30 20  20 20 20 20 20 20 20 20  .HPS300
+[020] 20 20 20 20 20 00 00 EE  EE 11 11                      ... ...
+
+
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:609 SXSAP:608
+        Boot Reply:
+                RetCode:0 SeqNo:1 SessID:0 Vers:2
+                File Name (8): <SYSNESTA>
+AIAX > NESTA sap f8 ui/C
+[000] 00 00 00 06 09 06 08 81  00 00 00 00 01 00 00 00  ........ ........
+[010] 02 08 53 59 53 4E 45 53  54 41                    ..SYSNES TA
+
+
+SEND FILENAME #2
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:608 SXSAP:609
+        Boot Request: (Send Filename #2)
+                RetCode:0 SeqNo:2 SessID:ffff Vers:2
+                Machine Type: HPS300
+                File Name (0): <>
+NESTA > AIAX sap f8 ui/C
+[000] 00 00 00 06 08 06 09 01  00 00 00 00 02 FF FF 00  ........ ........
+[010] 02 48 50 53 33 30 30 20  20 20 20 20 20 20 20 20  .HPS300
+[020] 20 20 20 20 20 00 00 EE  EE 11 11                      ... ...
+
+
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:609 SXSAP:608
+        Boot Reply:
+                RetCode:18 SeqNo:2 SessID:0 Vers:2
+                File Name (0): <>
+AIAX > NESTA sap f8 ui/C
+[000] 00 00 00 06 09 06 08 81  12 00 00 00 02 00 00 00  ........ ........
+[010] 02 00                                             ..
+
+
+BOOT REQUEST
+	sequence number: no significance, copy to reply
+	sessid: assigned in reply
+	save filename requested for later use
+
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:608 SXSAP:609
+        Boot Request:
+                RetCode:0 SeqNo:bf73f76e SessID:0 Vers:2
+                Machine Type: HPS300
+                File Name (8): <SYSNESTA>
+NESTA > AIAX sap f8 ui/C
+[000] 00 00 00 06 08 06 09 01  00 BF 73 F7 6E 00 00 00  ........ ..s.n...
+[010] 02 48 50 53 33 30 30 20  20 20 20 20 20 20 20 20  .HPS300
+[020] 20 20 20 20 20 08 53 59  53 4E 45 53 54 41             .SY SNESTA
+
+
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:609 SXSAP:608
+        Boot Reply:
+                RetCode:0 SeqNo:bf73f76e SessID:1 Vers:2
+                File Name (8): <SYSNESTA>
+AIAX > NESTA sap f8 ui/C
+[000] 00 00 00 06 09 06 08 81  00 BF 73 F7 6E 00 01 00  ........ ..s.n...
+[010] 02 08 53 59 53 4E 45 53  54 41                    ..SYSNES TA
+
+
+READ REQUEST
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:608 SXSAP:609
+        Read Request:
+                RetCode:0 Offset:0 SessID:1
+                NoOfBytes: 256
+NESTA > AIAX sap f8 ui/C
+[000] 00 00 00 06 08 06 09 02  00 00 00 00 00 00 01 01  ........ ........
+[010] 00 48 50 53 33 30 30 20  20 20 20 20 20 20 20 20  .HPS300
+[020] 20 20 20 20 20 08 53 59  53 4E 45                      .SY SNE
+len=43
+
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:609 SXSAP:608
+        Read Reply:
+                RetCode:0 Offset:0 SessID:1
+                NoOfBytesSent: 256                   /begin of data
+AIAX > NESTA sap f8 ui/C                            |
+[000] 00 00 00 06 09 06 08 82  00 00 00 00 00 00 01 80  ........ ........
+[010] 00 42 4F 4F 54 34 33 00  00 00 02 10 00 00 00 00  .BOOT43. ........
+[020] 00 00 01 00 01 00 00 00  00 00 00 00 00 00 00 00  ........ ........
+[030] 00 01 41 00 00 00 00 00  00 00 00 00 00 00 00 00  ..A..... ........
+[040] 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........
+[050] 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........
+[060] 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........
+[070] 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........
+[080] 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........
+[090] 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........
+[0A0] 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........
+[0B0] 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........
+[0C0] 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........
+[0D0] 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........
+[0E0] 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........
+[0F0] 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........
+[100] 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00     ........ .......
+len=271
+
+READ REQUEST
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:608 SXSAP:609
+        Read Request:
+                RetCode:0 Offset:200 SessID:1
+                NoOfBytes: 256
+NESTA > AIAX sap f8 ui/C
+[000] 00 00 00 06 08 06 09 02  00 00 00 02 00 00 01 01  ........ ........
+[010] 00 48 50 53 33 30 30 20  20 20 20 20 20 20 20 20  .HPS300
+[020] 20 20 20 20 20 08 53 59  53 4E 45                      .SY SNE
+ len=43
+                         0000 0006 0806 0902 0000 0002 0000 0101
+                         0048 5053 3330 3020 2020 2020 2020 2020
+                         2020 2020 2008 5359 534e 45
+
+
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:609 SXSAP:608
+        Read Reply:
+                RetCode:0 Offset:200 SessID:1
+                NoOfBytesSent: 256
+AIAX > NESTA sap f8 ui/C
+[000] 00 00 00 06 09 06 08 82  00 00 00 02 00 00 01 53  ........ .......S
+[010] 59 53 5F 49 4E 53 54 00  00 E9 42 00 00 00 20 00  YS_INST. ..B... .
+[020] 00 01 21 03 12 97 00 46  40 80 01 FF F0 00 00 09  ..!....F @.......
+[030] 20 20 20 20 20 00 00 00  00 FF FF 00 00 00 00 00       ... ........
+[040] 00 00 00 00 00 00 00 00  00 00 FF 00 00 00 00 09  ........ ........
+[050] 20 20 20 20 20 00 00 00  00 FF FF 00 00 00 00 00       ... ........
+[060] 00 00 00 00 00 00 00 00  00 00 FF 00 00 00 00 09  ........ ........
+[070] 20 20 20 20 20 00 00 00  00 FF FF 00 00 00 00 00       ... ........
+[080] 00 00 00 00 00 00 00 00  00 00 FF 00 00 00 00 09  ........ ........
+[090] 20 20 20 20 20 00 00 00  00 FF FF 00 00 00 00 00       ... ........
+[0A0] 00 00 00 00 00 00 00 00  00 00 FF 00 00 00 00 09  ........ ........
+[0B0] 20 20 20 20 20 00 00 00  00 FF FF 00 00 00 00 00       ... ........
+[0C0] 00 00 00 00 00 00 00 00  00 00 FF 00 00 00 00 09  ........ ........
+[0D0] 20 20 20 20 20 00 00 00  00 FF FF 00 00 00 00 00       ... ........
+[0E0] 00 00 00 00 00 00 00 00  00 00 FF 00 00 00 00 09  ........ ........
+[0F0] 20 20 20 20 20 00 00 00  00 FF FF 00 00 00 00 00       ... ........
+[100] 00 00 00 00 00 00 00 00  00 00 FF 00 00 00 00     ........ .......
+len=271
+
+
+
+READ REQUEST
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:608 SXSAP:609
+        Read Request:
+                RetCode:0 Offset:2000 SessID:1
+                NoOfBytes: 256
+NESTA > AIAX sap f8 ui/C
+[000] 00 00 00 06 08 06 09 02  00 00 00 20 00 00 01 01  ........ ... ....
+[010] 00 48 50 53 33 30 30 20  20 20 20 20 20 20 20 20  .HPS300
+[020] 20 20 20 20 20 08 53 59  53 4E 45                      .SY SNE
+len=43
+
+AIAX > NESTA sap f8 ui/C
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:609 SXSAP:608
+        Read Reply:
+                RetCode:0 Offset:2000 SessID:1
+                NoOfBytesSent: 256
+[000] 00 00 00 06 09 06 08 82  00 00 00 20 00 00 01 FF  ........ ... ....
+[010] F0 00 00 00 01 20 B8 2E  7C FF FF F0 00 70 2F 20  ..... .. |....p/
+[020] 7C FF FF FE E2 20 BC FF  F0 02 7C 5C 88 51 C8 FF  |.... .. ..|\.Q..
+[030] F6 20 7C FF FF FF 9C 20  BC FF F0 02 9A 41 F9 FF  . |....  .....A..
+[040] F0 FF 88 20 3C 00 00 08  08 4E 7B 00 02 20 3C 00  ... <... .N{.. <.
+[050] 00 02 00 4E 7B 00 02 4E  7A 00 02 4A 80 67 00 00  ...N{..N z..J.g..
+[060] A8 20 3C 00 00 08 08 4E  7B 00 02 23 FC 00 00 00  . <....N {..#....
+[070] 80 00 5F 40 0C 20 39 00  5F 40 0C 08 00 00 07 67  .._@. 9. _@.....g
+[080] 28 20 BC 00 00 00 04 23  FC 00 00 00 00 00 5F 40  ( .....# ......_@
+[090] 0C 20 39 00 5F 40 0C 08  00 00 07 67 00 01 32 20  . 9._@.. ...g..2
+[0A0] BC 00 00 00 05 60 00 01  28 20 BC 00 00 00 03 23  .....`.. ( .....#
+[0B0] FC 00 00 00 00 00 5F 40  0C 20 39 00 5F 40 0C 08  ......_@ . 9._@..
+[0C0] 00 00 10 67 00 01 0A 41  F9 FF F0 FF 8C E0 88 02  ...g...A ........
+[0D0] 80 00 00 00 FF 20 80 41  F9 FF F0 FF 88 0C 00 00  ..... .A ........
+[0E0] 01 67 10 0C 00 00 03 67  14 20 BC 00 00 00 08 60  .g.....g . .....`
+[0F0] 00 00 DE 20 BC 00 00 00  06 60 00 00 D4 20 BC 00  ... .... .`... ..
+[100] 00 00 07 60 00 00 CA 08  C0 00 1F 4E 7B 00 02     ...`.... ...N{..
+ len=271
+
+
+
+READ REQUEST
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:608 SXSAP:609
+        Read Request:
+                RetCode:0 Offset:2100 SessID:1
+                NoOfBytes: 1482
+NESTA > AIAX sap f8 ui/C
+[000] 00 00 00 06 08 06 09 02  00 00 00 21 00 00 01 05  ........ ...!....
+[010] CA 48 50 53 33 30 30 20  20 20 20 20 20 20 20 20  .HPS300
+[020] 20 20 20 20 20 08 53 59  53 4E 45                      .SY SNE
+len=43
+
+AIAX > NESTA sap f8 ui/C
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:609 SXSAP:608
+        Read Reply:
+                RetCode:0 Offset:2100 SessID:1
+                NoOfBytesSent: 1482
+[000] 00 00 00 06 09 06 08 82  00 00 00 21 00 00 01 4E  ........ ...!...N
+[010] 7A 00 02 4A 80 67 00 00  7A 70 00 4E 7B 00 02 4E  z..J.g.. zp.N{..N
+[020] 7B 00 04 4E 7B 00 05 4E  7B 00 06 4E 7B 00 07 F4  {..N{..N {..N{...
+[030] D8 41 F9 FF F0 FF 8C 20  39 00 5F 40 0C E0 88 02  .A.....  9._@....
+...
+[5A0] 00 00 A0 20 0A 53 80 76  1E B6 80 65 0A 20 02 53  ... .S.v ...e. .S
+[5B0] 80 76 0B B6 80 64 06 42  80 60 00 00 86 70 BA D0  .v...d.B .`...p..
+[5C0] 88 76 1E B6 80 65 F0 93  C9 20 3C 00 00 07 B2 B2  .v...e.. . <.....
+[5D0] 80 6F 16 E8 C0 07 82 66  06                       .o.....f .
+ len=1497
+
+READ REQUEST
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:608 SXSAP:609
+        Read Request:
+                RetCode:0 Offset:26ca SessID:1
+                NoOfBytes: 1482
+NESTA > AIAX sap f8 ui/C
+[000] 00 00 00 06 08 06 09 02  00 00 00 26 CA 00 01 05  ........ ...&....
+[010] CA 48 50 53 33 30 30 20  20 20 20 20 20 20 20 20  .HPS300
+[020] 20 20 20 20 20 08 53 59  53 4E 45                      .SY SNE
+
+
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:609 SXSAP:608
+        Read Reply:
+                RetCode:0 Offset:26ca SessID:1
+                NoOfBytesSent: 1482
+AIAX > NESTA sap f8 ui/C
+[000] 00 00 00 06 09 06 08 82  00 00 00 26 CA 00 01 43  ........ ...&...C
+[010] E9 01 6E 60 04 43 E9 01  6D 52 80 B2 80 6E EA E8  ..n`.C.. mR...n..
+[020] C1 07 82 66 08 76 02 B6  82 6C 02 52 89 70 01 B4  ...f.v.. .l.R.p..
+[030] 80 6F 14 42 81 41 F9 FF  F0 FF B8 D3 F0 18 00 58  .o.B.A.. .......X
+[040] 81 52 80 B4 80 6E EE 43  F2 98 FF 43 F1 9A 00     .R...n.C ...C...
+
+...
+
+READ REQUEST
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:608 SXSAP:609
+        Read Request:
+                RetCode:0 Offset:13caa SessID:1
+                NoOfBytes: 1046
+NESTA > AIAX sap f8 ui/C
+[000] 00 00 00 06 08 06 09 02  00 00 01 3C AA 00 01 04  ........ ...<....
+[010] 16 48 50 53 33 30 30 20  20 20 20 20 20 20 20 20  .HPS300
+[020] 20 20 20 20 20 08 53 59  53 4E 45                      .SY SNE
+
+
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:609 SXSAP:608
+        Read Reply:
+                RetCode:0 Offset:13caa SessID:1
+                NoOfBytesSent: 1046
+AIAX > NESTA sap f8 ui/C
+[000] 00 00 00 06 09 06 08 82  00 00 01 3C AA 00 01 00  ........ ...<....
+[010] 75 00 08 00 00 00 00 00  35 00 09 00 00 00 00 00  u....... 5.......
+[020] CB 51 07 00 00 00 00 00  0D 00 08 00 00 00 00 00  .Q...... ........
+[030] 65 00 08 00 00 00 00 00  25 00 09 00 00 00 00 00  e....... %.......
+[040] AB 00 08 00 00 00 00 00  05 00 08 00 00 00 00     ........ .......
+
+
+BOOT DONE
+Addr: 08:00:09:21:5b:62   Intf: fxp0
+        802.2 LLC: DSAP:f8 SSAP:f8 CTRL:300
+        HP Ext:    DXSAP:608 SXSAP:609
+        Boot Complete:
+                RetCode:0 SessID:1
+NESTA > AIAX sap f8 ui/C
+[000] 00 00 00 06 08 06 09 03  00 00 00 00 00 00 01 04  ........ ........
+[010] 16 48 50 53 33 30 30 20  20 20 20 20 20 20 20 20  .HPS300
+[020] 20 20 20 20 20 08 53 59  53 4E 45                      .SY SNE
+
